@@ -1,0 +1,49 @@
+<%- include('templates/header.ejs') %>
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">CLOTHES </h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="row">
+                        <% data.forEach(el=> { %>
+                            <div class="col-4">
+                                <div class="card" style="width: 20rem;">
+                                    <img src="https://dynamic.zacdn.com/3tvK4w-iQFZJdB_IaiAMACqJcCc=/fit-in/346x500/filters:quality(90):fill(ffffff)/http://static.id.zalora.net/p/orkids-wear-2731-0156152-1.jpg"
+                                        class="card-img-top" alt="" width="100%" height="100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= el.name %>
+                                        </h5>
+                                        <p class="card-text">Material : <%= el.material %>
+                                        </p>
+                                        <p class="card-text">Color : <%= el.color %>
+                                        </p>
+                                        <p class="card-text">Price : <%= el.generatePrice() %>
+                                        </p>
+                                        <p class="card-text">Stock : <%= el.stock %>
+                                        </p>
+                                        <a href="/user/<%= el.id %>/buy " class="btn btn-primary">Buy</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('templates/footer.ejs') %>

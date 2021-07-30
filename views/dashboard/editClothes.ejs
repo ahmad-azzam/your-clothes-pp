@@ -1,0 +1,53 @@
+<%- include('templates/header.ejs') %>
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <div class="row justify-content-center">
+                    <div class="col-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h1>Edit Clothes</h1>
+                            </div>
+                            <div class="card-body">
+                                <form action="/admin/clothes/edit/<%= data.id %>" method="post">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Nama</label>
+                                        <input type="text" name="name" value="<%= data.name %>" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Material</label>
+                                        <input type="text" name="material" value="<%= data.material %>"
+                                            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Color</label>
+                                        <input type="text" name="color" value="<%= data.color %>" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Price</label>
+                                        <input type="number" name="price" value="<%= data.price %>" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Stock</label>
+                                        <input type="number" name="stock" value="<%= data.stock %>" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Image</label>
+                                        <input type="number" name="image" value="<%= data.image %>" class="form-control"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('templates/footer.ejs') %>

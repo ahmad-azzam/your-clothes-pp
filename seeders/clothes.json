@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Baju Satu",
+        "material": "Kain Wol",
+        "color": "Merah",
+        "price": 100000,
+        "stock": 15
+    },
+    {
+        "name": "Baju Dua",
+        "material": "Jeans",
+        "color": "Biru",
+        "price": 200000,
+        "stock": 10
+    },
+    {
+        "name": "Celana Satu",
+        "material": "Kain Wol",
+        "color": "Biru",
+        "price": 130000,
+        "stock": 5
+    },
+    {
+        "name": "Celana Dua",
+        "material": "Kain Kafan",
+        "color": "Kuning",
+        "price": 90000,
+        "stock": 12
+    },
+    {
+        "name": "Jaket Satu",
+        "material": "Kain Wol",
+        "color": "Merah",
+        "price": 100000,
+        "stock": 15
+    },
+    {
+        "name": "Jaket Dua",
+        "material": "Kain Wol",
+        "color": "Putih",
+        "price": 300000,
+        "stock": 7
+    }
+]

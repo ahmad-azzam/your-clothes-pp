@@ -1,0 +1,59 @@
+<%- include('templates/header.ejs') %>
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Transaction : <%= data.name %>
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th>Nama Barang</th>
+                                    <th>Harga</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.Clothes.forEach( (el,i)=> { %>
+                                    <% if(el.UserClothes.status==='Dalam Konfirmasi' ) { %>
+                                        <tr>
+                                            <td>
+                                                <%= i+1 %>
+                                            </td>
+                                            <td>
+                                                <%= el.name %>
+                                            </td>
+                                            <td>
+                                                <%= el.price %>
+                                            </td>
+                                            <td>
+                                                <%= el.stock %>
+                                            </td>
+                                            <td>
+                                                <%= el.UserClothes.status %>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-success"
+                                                    href="/admin/transaction/list/<%= el.id %>/accept/<%= data.id %> ">Accept</a>
+                                                <a class="btn btn-danger"
+                                                    href="/admin/transaction/list/<%= el.id %>/decline/<%= data.id %> ">Decline</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <%- include('templates/footer.ejs') %>

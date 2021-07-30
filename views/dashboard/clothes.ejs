@@ -1,0 +1,59 @@
+<%- include('templates/header.ejs') %>
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Clothes</h1>
+                        <a class="btn btn-primary mb-2" href="/admin/clothes/add">Add Clothes</a>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th>Name</th>
+                                    <th>Material</th>
+                                    <th>Color</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.forEach( (el,i)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= i+1 %>
+                                        </td>
+                                        <td>
+                                            <%= el.name %>
+                                        </td>
+                                        <td>
+                                            <%= el.material %>
+                                        </td>
+                                        <td>
+                                            <%= el.color %>
+                                        </td>
+                                        <td>
+                                            <%= el.price %>
+                                        </td>
+                                        <td>
+                                            <%= el.stock %>
+                                        </td>
+                                        <td><a class="btn btn-warning" href="/admin/clothes/edit/<%= el.id %> ">Edit</a>
+                                            <a class="btn btn-danger"
+                                                href="/admin/clothes/delete/<%= el.id %>">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <%- include('templates/footer.ejs') %>

@@ -1,0 +1,47 @@
+<%- include('templates/header.ejs') %>
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>List User Transaction</h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th>Name</th>
+                                    <th>Total Transaction</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.forEach( (el,i)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= i+1 %>
+                                        </td>
+                                        <td>
+                                            <%= el.name %>
+                                        </td>
+                                        <td>
+                                            <%= el.countTransaction(el.Clothes) %>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-secondary"
+                                                href="/admin/transaction/list/<%= el.id %> ">List
+                                                Transaction</a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <%- include('templates/footer.ejs') %>
