@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "12345",
-    "database": "tokoBaju",
+    "database": "PP-your-clothes",
     "host": "localhost",
     "dialect": "postgres"
   },
